@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Week 2 Meetup UI',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        accentColor: Colors.pink[800],
       ),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
