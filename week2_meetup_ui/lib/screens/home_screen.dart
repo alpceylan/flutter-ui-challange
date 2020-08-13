@@ -61,64 +61,70 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      height: deviceHeight * 0.09,
-                      width: deviceWidth * 0.15,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(200),
+                    GestureDetector(
+                      child: Container(
+                        height: deviceHeight * 0.09,
+                        width: deviceWidth * 0.15,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(200),
+                          ),
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Theme.of(context).accentColor,
+                            style: BorderStyle.solid,
+                            width: deviceWidth * 0.001,
+                          ),
                         ),
-                        color: Colors.white,
-                        border: Border.all(
+                        child: Icon(
+                          Icons.music_note,
                           color: Theme.of(context).accentColor,
-                          style: BorderStyle.solid,
-                          width: deviceWidth * 0.001,
+                          size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                         ),
-                      ),
-                      child: Icon(
-                        Icons.music_note,
-                        color: Theme.of(context).accentColor,
-                        size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                       ),
                     ),
-                    Container(
-                      height: deviceHeight * 0.09,
-                      width: deviceWidth * 0.15,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(200),
+                    GestureDetector(
+                      child: Container(
+                        height: deviceHeight * 0.09,
+                        width: deviceWidth * 0.15,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(200),
+                          ),
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Theme.of(context).accentColor,
+                            style: BorderStyle.solid,
+                            width: deviceWidth * 0.001,
+                          ),
                         ),
-                        color: Colors.white,
-                        border: Border.all(
+                        child: Icon(
+                          Icons.show_chart,
                           color: Theme.of(context).accentColor,
-                          style: BorderStyle.solid,
-                          width: deviceWidth * 0.001,
+                          size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                         ),
-                      ),
-                      child: Icon(
-                        Icons.show_chart,
-                        color: Theme.of(context).accentColor,
-                        size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                       ),
                     ),
-                    Container(
-                      height: deviceHeight * 0.09,
-                      width: deviceWidth * 0.15,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(200),
+                    GestureDetector(
+                      child: Container(
+                        height: deviceHeight * 0.09,
+                        width: deviceWidth * 0.15,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(200),
+                          ),
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Theme.of(context).accentColor,
+                            style: BorderStyle.solid,
+                            width: deviceWidth * 0.001,
+                          ),
                         ),
-                        color: Colors.white,
-                        border: Border.all(
+                        child: Icon(
+                          Icons.favorite_border,
                           color: Theme.of(context).accentColor,
-                          style: BorderStyle.solid,
-                          width: deviceWidth * 0.001,
+                          size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                         ),
-                      ),
-                      child: Icon(
-                        Icons.favorite_border,
-                        color: Theme.of(context).accentColor,
-                        size: (deviceWidth * 0.013) * (deviceHeight * 0.01),
                       ),
                     ),
                   ],
@@ -215,7 +221,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Text(
                           'Marie and 4 Others',
-                          style: TextStyle(color: Theme.of(context).accentColor, fontSize: 15,),
+                          style: TextStyle(
+                            color: Theme.of(context).accentColor,
+                            fontSize: 15,
+                          ),
                         ),
                       ],
                     ),
@@ -234,6 +243,81 @@ class HomeScreen extends StatelessWidget {
                     bottomLeft: Radius.circular(100),
                   ),
                 ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Today 6:00 PM',
+                      style: TextStyle(
+                        color: Colors.purple[700],
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      'Practice French, English and Chinese',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    SizedBox(
+                      height: deviceHeight * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          child: Container(
+                            height: deviceHeight * 0.075,
+                            width: deviceWidth * 0.13,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(100),
+                              ),
+                              border: Border.all(
+                                color: Theme.of(context).accentColor,
+                                width: deviceWidth * 0.008,
+                                style: BorderStyle.solid,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.check,
+                              color: Theme.of(context).accentColor,
+                              size:
+                                  (deviceWidth * 0.013) * (deviceHeight * 0.01),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: deviceWidth * 0.03,
+                        ),
+                        GestureDetector(
+                          child: Container(
+                            height: deviceHeight * 0.075,
+                            width: deviceWidth * 0.13,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(100),
+                              ),
+                              border: Border.all(
+                                color: Theme.of(context).accentColor,
+                                width: deviceWidth * 0.008,
+                                style: BorderStyle.solid,
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.close,
+                              color: Theme.of(context).accentColor,
+                              size:
+                                  (deviceWidth * 0.013) * (deviceHeight * 0.01),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             Container(
@@ -246,6 +330,50 @@ class HomeScreen extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(100),
                   ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Today 9:00 PM',
+                      style: TextStyle(
+                        color: Colors.purple[700],
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      'Easy and Gentle Yoga',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: deviceHeight * 0.015,
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: deviceHeight * 0.015,
+                          horizontal: deviceWidth * 0.04,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.pink[100],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(50),
+                          ),
+                        ),
+                        child: Text(
+                          'You are going!',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
