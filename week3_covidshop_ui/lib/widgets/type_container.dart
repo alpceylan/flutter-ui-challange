@@ -24,7 +24,7 @@ class TypeContainer extends StatelessWidget {
             horizontal: deviceWidth * 0.018,
           ),
           decoration: BoxDecoration(
-            color: selectedIndex == index ? Colors.white : Colors.grey[700],
+            color: selectedIndex == index ? Colors.white : Theme.of(context).canvasColor,
             borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),

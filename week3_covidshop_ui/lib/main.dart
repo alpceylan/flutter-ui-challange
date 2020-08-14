@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Covid Shop',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
           fontFamily: 'Gilroy-Medium',
           backgroundColor: Colors.grey[850],
+          canvasColor: Colors.grey[700],
         ),
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),

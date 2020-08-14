@@ -7,12 +7,20 @@ import '../providers/products.dart';
 // Widgets
 import '../widgets/main_appbar.dart';
 import '../widgets/type_container.dart';
+import '../widgets/showcase_item.dart';
 
 // Models
 import '../models/product.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const routeName = '/home';
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  double selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,25 +28,67 @@ class HomeScreen extends StatelessWidget {
     final deviceWidth = MediaQuery.of(context).size.width;
 
     double index = 0;
-    double selectedIndex = 0;
 
     final Products productsData = Provider.of<Products>(context);
     final List<Product> products = productsData.products;
     final List<String> types = productsData.types;
 
     final List<Widget> typeWidgets = [];
+    final List<Widget> showcaseWidgets = [];
 
     types.forEach((type) {
       typeWidgets.add(
-        TypeContainer(
-          deviceHeight: deviceHeight,
-          deviceWidth: deviceWidth,
-          index: index,
-          selectedIndex: selectedIndex,
-          text: type,
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              switch (type) {
+                case ('Vaccine'):
+                  selectedIndex = 0;
+                  break;
+                case ('Sanitizer'):
+                  selectedIndex = 1;
+                  break;
+                case ('Mask'):
+                  selectedIndex = 2;
+                  break;
+                case ('Gloves'):
+                  selectedIndex = 3;
+                  break;
+                case ('Disinfectant'):
+                  selectedIndex = 4;
+                  break;
+                case ('Hat'):
+                  selectedIndex = 5;
+                  break;
+              }
+            });
+          },
+          child: TypeContainer(
+            deviceHeight: deviceHeight,
+            deviceWidth: deviceWidth,
+            index: index,
+            selectedIndex: selectedIndex,
+            text: type,
+          ),
         ),
       );
-      index++;
+      if (index == types.length - 1) {
+        index = 0;
+      } else {
+        index++;
+      }
+    });
+
+    products.forEach((Product product) {
+      if (product.showcase) {
+        showcaseWidgets.add(
+          ShowcaseItem(
+            deviceHeight: deviceHeight,
+            deviceWidth: deviceWidth,
+            product: product,
+          ),
+        );
+      }
     });
 
     return Scaffold(
@@ -66,6 +116,15 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [...typeWidgets],
+              ),
+            ),
+            SizedBox(
+              height: deviceHeight * 0.05,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [...showcaseWidgets],
               ),
             ),
           ],

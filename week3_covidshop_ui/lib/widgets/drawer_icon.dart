@@ -23,7 +23,7 @@ class DrawerIcon extends StatelessWidget {
         children: [
           Container(
             width: deviceWidth * 0.05,
-            height: deviceHeight * 0.008,
+            height: deviceHeight * 0.005,
             color: Colors.amber[300],
           ),
           SizedBox(
@@ -31,7 +31,7 @@ class DrawerIcon extends StatelessWidget {
           ),
           Container(
             width: deviceWidth * 0.09,
-            height: deviceHeight * 0.008,
+            height: deviceHeight * 0.005,
             color: Colors.white,
           ),
           SizedBox(
@@ -39,7 +39,7 @@ class DrawerIcon extends StatelessWidget {
           ),
           Container(
             width: deviceWidth * 0.03,
-            height: deviceHeight * 0.008,
+            height: deviceHeight * 0.005,
             color: Colors.white,
           ),
         ],

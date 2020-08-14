@@ -4,6 +4,7 @@ class Product {
   final String imagePath;
   final double price;
   final String seller;
+  final bool showcase;
 
   Product({
     this.title,
@@ -11,5 +12,6 @@ class Product {
     this.imagePath,
     this.price,
     this.seller,
+    this.showcase,
   });
 }

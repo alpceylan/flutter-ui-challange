@@ -9,6 +9,7 @@ class Products {
         imagePath: 'assets/images/pro-vac.png',
         price: 34.50,
         seller: 'johnsmith',
+        showcase: true,
       ),
       Product(
         title: 'Live-B1 Hester',
@@ -16,6 +17,7 @@ class Products {
         imagePath: 'assets/images/live-b1.png',
         price: 19.99,
         seller: 'alpceylan',
+        showcase: true,
       ),
       Product(
         title: 'Mask',
@@ -23,6 +25,7 @@ class Products {
         imagePath: 'assets/images/mask.png',
         price: 5.00,
         seller: 'oliverbaker',
+        showcase: false,
       ),
       Product(
         title: 'Soap',
@@ -30,6 +33,7 @@ class Products {
         imagePath: 'assets/images/soap.png',
         price: 2.99,
         seller: 'harrybennet',
+        showcase: false,
       ),
       Product(
         title: 'Gloves',
@@ -37,6 +41,7 @@ class Products {
         imagePath: 'assets/images/gloves.png',
         price: 10.99,
         seller: 'mustafayilmaz',
+        showcase: false,
       ),
       Product(
         title: 'Sanitizer',
@@ -44,6 +49,7 @@ class Products {
         imagePath: 'assets/images/sanitizer.png',
         price: 21.50,
         seller: 'donaldthompson',
+        showcase: false,
       ),
     ];
 
