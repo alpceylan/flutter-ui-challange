@@ -47,7 +47,20 @@ class Products {
       ),
     ];
 
+    final List<String> _productTypes = [
+      'Vaccine',
+      'Sanitizer',
+      'Mask',
+      'Gloves',
+      'Disinfectant',
+      'Hat',
+    ];
+
     List<Product> get products {
       return [..._products];
+    }
+
+    List<String> get types {
+      return [..._productTypes];
     }
 }
