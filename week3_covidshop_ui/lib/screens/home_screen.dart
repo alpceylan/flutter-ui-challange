@@ -8,6 +8,7 @@ import '../providers/products.dart';
 import '../widgets/main_appbar.dart';
 import '../widgets/type_container.dart';
 import '../widgets/showcase_item.dart';
+import '../widgets/sanitization_item.dart';
 
 // Models
 import '../models/product.dart';
@@ -95,156 +96,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (!showAll) {
       sanitizationWidgets.add(
-        Container(
-          height: deviceHeight * 0.3,
-          width: deviceWidth * 0.47,
-          child: Stack(
-            children: [
-              Container(
-                height: deviceHeight * 0.25,
-                width: deviceWidth * 0.44,
-                padding: EdgeInsets.symmetric(
-                  vertical: deviceHeight * 0.025,
-                ),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).canvasColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      products[0].title,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: deviceHeight * 0.06,
-                left: deviceWidth * 0.02,
-                child: Container(
-                  height: deviceHeight * 0.2,
-                  width: deviceWidth * 0.4,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(products[0].imagePath),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        SanitizationItem(
+          deviceHeight: deviceHeight,
+          deviceWidth: deviceWidth,
+          title: products[0].title,
+          imagePath: products[0].imagePath,
         ),
       );
       sanitizationWidgets.add(
-        Container(
-          height: deviceHeight * 0.3,
-          width: deviceWidth * 0.44,
-          child: Stack(
-            children: [
-              Container(
-                height: deviceHeight * 0.25,
-                width: deviceWidth * 0.48,
-                padding: EdgeInsets.symmetric(
-                  vertical: deviceHeight * 0.025,
-                ),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).canvasColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      products[1].title,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: deviceHeight * 0.06,
-                left: deviceWidth * 0.02,
-                child: Container(
-                  height: deviceHeight * 0.2,
-                  width: deviceWidth * 0.4,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(products[1].imagePath),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        SanitizationItem(
+          deviceHeight: deviceHeight,
+          deviceWidth: deviceWidth,
+          title: products[1].title,
+          imagePath: products[1].imagePath,
         ),
       );
     } else {
       products.forEach((product) {
         sanitizationWidgets.add(
-          Container(
-          height: deviceHeight * 0.4,
-          width: deviceWidth * 0.47,
-          child: Stack(
-            children: [
-              Container(
-                height: deviceHeight * 0.25,
-                width: deviceWidth * 0.44,
-                padding: EdgeInsets.symmetric(
-                  vertical: deviceHeight * 0.025,
-                ),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).canvasColor,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      product.title,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: deviceHeight * 0.06,
-                left: deviceWidth * 0.02,
-                child: Container(
-                  height: deviceHeight * 0.2,
-                  width: deviceWidth * 0.4,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(product.imagePath),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          SanitizationItem(
+            deviceHeight: deviceHeight,
+            deviceWidth: deviceWidth,
+            title: product.title,
+            imagePath: product.imagePath,
           ),
-        ),
         );
       });
     }
@@ -320,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               if (!showAll)
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [...sanitizationWidgets],
                 ),
               if (showAll)
@@ -327,8 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GridView.count(
                     shrinkWrap: true,
                     crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: deviceWidth * 0.03,
+                    mainAxisSpacing: deviceHeight * 0.02,
                     children: [...sanitizationWidgets],
                   ),
                 ),
