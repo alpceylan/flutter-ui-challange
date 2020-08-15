@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 // Screens
 import './screens/home_screen.dart';
+import './screens/product_detail_screen.dart';
 
 // Providers
 import './providers/products.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         home: HomeScreen(),
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
+          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
         },
       ),
     );
